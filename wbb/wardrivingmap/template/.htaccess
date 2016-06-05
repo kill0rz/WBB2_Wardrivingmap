@@ -1,0 +1,14 @@
+<Files *>
+    order allow,deny
+    deny from all
+</Files>
+
+<Files *.kml> 
+    order allow,deny
+    allow from all
+</Files>
+
+<Files *.php> 
+    order allow,deny
+    allow from all
+</Files>
