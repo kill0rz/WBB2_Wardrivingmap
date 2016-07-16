@@ -1,4 +1,10 @@
 + Saubere Integration ins WBB
-+ alle benötigten Linux-Pakete listen
++ alle benötigten Linux-Pakete listen (Anleitung)
 + Beschreibung beim Upload mitgeben
 + Auto-Post bei Upload ins Forum?
++ pro Nutzer aufstellen
++ Gruppenrecthe implementieren
+
++ Auto-Post zu Wigle
+	+ API nutzen
+	+ LogIns pro Nutzer speichern
