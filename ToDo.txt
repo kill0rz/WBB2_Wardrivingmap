@@ -10,6 +10,12 @@
 + Daten alle in eine DB werfen
 	+ Jeder Upload bekommt eine ID
 	+ Datum als Timestamp
+	+ Link zu Map als Permalink oben in Textfeld (input)
+		+ Auch in die Shoutbox integrieren
++ URL-Format ändern
+	+ /?id=XXX <-- aus DB
++ Shoutbox optional in Anleitung
++ alles auslagern in Konfig
 
 + Auto-Post zu Wigle
 	+ API nutzen
