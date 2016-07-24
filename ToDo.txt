@@ -14,10 +14,11 @@
 		+ Auch in die Shoutbox integrieren
 + URL-Format ändern
 	+ /?id=XXX <-- aus DB
-+ Shoutbox optional in Anleitung
 + alles auslagern in Konfig
 
 + Auto-Post zu Wigle
 	+ API nutzen
 	+ LogIns pro Nutzer speichern
 	+ anonymen Upload ermöglichen
+
++ Shoutbox optional in Anleitung

@@ -4,9 +4,12 @@ if (!(isset($argv[1]) && trim($argv[1]) == "1")) {
 	die("nein.");
 }
 
+include 'wdm_config.php';
+
 function getgentime() {
 
 }
+
 $phpversion = phpversion();
 
 require '../acp/lib/config.inc.php';
@@ -20,7 +23,7 @@ require '../acp/lib/options.inc.php';
 $filenameofinread = "giskismet_output.txt";
 $newcount = 0;
 
-if (!file_exists($filenameofinread)) {
+if (!file_exists($filenameofinread) || !$wdm_use_shoutbox) {
 	die();
 }
 
@@ -30,7 +33,6 @@ foreach ($output as $line) {
 	if (str_replace("AP added", "", $line) != $line) {
 		$newcount++;
 	}
-
 }
 
 unlink($filenameofinread);
@@ -38,6 +40,6 @@ unlink($filenameofinread);
 $db = new db($sqlhost, $sqluser, $sqlpassword, $sqldb, $phpversion);
 
 if ($newcount > 0) {
-	$message = "Die Wardriving-Map wurde aktualisiert. Es wurden [b]" . $newcount . "[/b] neue Access Points hinzugef&uuml;gt.";
+	$message = "Die Wardriving-Map wurde aktualisiert. Es wurden [b]" . $newcount . "[/b] neue Access Points hinzugefügt.";
 	$result = $db->query("INSERT INTO bb" . $n . "_xy_shoutbox SET `name`='WLAN-Map',`comment`='" . addslashes($message) . "',`date`='" . time() . "'");
 }
