@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd /var/www/suedboard/wbb2/wardrivingmap/todo/
+cd /var/www/forum/wbb2/wardrivingmap/todo/
 ls

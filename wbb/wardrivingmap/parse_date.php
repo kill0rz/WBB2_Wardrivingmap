@@ -11,3 +11,12 @@ if (is_file($argv[1])) {
 	$date = $day . "." . $month . "." . $year;
 	echo $date;
 }
+
+if (file_exists("./kml/" . $date)) {
+	// Heute wurde schon geparst
+	unlink("./kml/" . $date . "/output.kml");
+} else {
+	//erstes Parsen an dem Tag
+	file_put_contents("./kml/" . $date . "/index.php");
+	file_put_contents("./kml/" . $date . "info");
+}
