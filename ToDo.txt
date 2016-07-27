@@ -24,3 +24,4 @@
 	+ anonymen Upload ermöglichen
 
 + Shoutbox optional in Anleitung
+	+ Option für Optionales
