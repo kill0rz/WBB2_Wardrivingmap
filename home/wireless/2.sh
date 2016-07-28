@@ -10,7 +10,7 @@ current_time=$(date "+%s")
 
 #$1 = uploaded file.netxml
 
-cd /var/www/forum/wbb2/wardrivingmap/
+cd /var/www/wbb2/wardrivingmap/
 #Backup
 chmod 0777 ./todo/$1
 cp wireless.dbl ./backups/db/wireless.dbl.$current_time
@@ -20,8 +20,8 @@ mv output.kml ./backups/kml/output.kml.$current_time
 #Launch Kismet for global
 giskismet -x ./todo/$1 > giskismet_output.txt
 giskismet -q "select * from wireless" -o output.kml
+php notify.php 1
 rm giskismet_output.txt
-php wardrivingmap_notify.php 1
 
 #Launch Kismet for local
 var_date=`php parse_date.php ./todo/$1`

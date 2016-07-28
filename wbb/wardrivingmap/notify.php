@@ -1,27 +1,25 @@
 <?php
 
-if (!(isset($argv[1]) && trim($argv[1]) == "1")) {
-	die("nein.");
+if (!isset($argv[1]) || trim($argv[1]) != "1") {
+	die("nein.\n");
 }
 
-include './global.php';
-include 'wdm_config.php';
+require '../acp/lib/config.inc.php';
+require '../acp/lib/class_db_mysql.php';
+require '../acp/lib/class_parse.php';
+require '../acp/lib/class_parsecode.php';
+require '../acp/lib/options.inc.php';
+require 'wdm_config.php';
+$phpversion = phpversion();
+$db = new db($sqlhost, $sqluser, $sqlpassword, $sqldb, $phpversion);
 
 function getgentime() {
 
 }
 
-$phpversion = phpversion();
-
-//require './acp/lib/config.inc.php';
-//require './acp/lib/class_db_mysql.php';
-//require './acp/lib/class_parse.php';
-//require './acp/lib/class_parsecode.php';
-//require './acp/lib/options.inc.php';
-
 // -------
 
-$filenameofinread = "./wardrivingmap/giskismet_output.txt";
+$filenameofinread = "./giskismet_output.txt";
 $newcount = 0;
 
 if (!file_exists($filenameofinread) || !$wdm_use_shoutbox) {
@@ -37,8 +35,6 @@ foreach ($output as $line) {
 }
 
 unlink($filenameofinread);
-
-//$db = new db($sqlhost, $sqluser, $sqlpassword, $sqldb, $phpversion);
 
 if ($newcount > 0) {
 	$message = "Die Wardriving-Map wurde aktualisiert. Es wurden [b]" . $newcount . "[/b] neue Access Points hinzugefügt.";

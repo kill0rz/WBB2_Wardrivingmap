@@ -1,20 +1,22 @@
 <?php
 
+// require './acp/lib/class_parse.php';
+// require './acp/lib/class_parsecode.php';
+// require './acp/lib/options.inc.php';
 require './global.php';
-require './acp/lib/class_parse.php';
-require './acp/lib/class_parsecode.php';
-require './acp/lib/options.inc.php';
+require './wardrivingmap/wdm_config.php';
 
 $map_upload = '';
 $successmessage = '';
-$linkscollection = "<table border='0'><tr><th>Datum</th><th>Info</th></tr>";
+$linkscollection = "<table border='1'><tr><th>Datum</th><th>Info</th></tr>";
 
 #netxml - fuer alle freigeben
 if ($wbbuserdata['userid'] == "1") {
 	eval("\$map_upload .= \"" . $tpl->get("wardrivingmap_upload") . "\";");
 	if (isset($_FILES['newmap_netxml']) && $_FILES['newmap_netxml']['size'] > 0) {
-		move_uploaded_file($_FILES['newmap_netxml']['tmp_name'], "./wardrivingmap/todo/" . str_replace(".netxml", "", $_FILES['newmap_netxml']['name']) . ".netxml");
-		mail("mail@example.com", "Neue NETXML von " . $wbbuserdata['username'] . " hochgeladen", "");
+		// move_uploaded_file($_FILES['newmap_netxml']['tmp_name'], "./wardrivingmap/todo/" . str_replace(".netxml", "", $_FILES['newmap_netxml']['name']) . ".netxml");
+		move_uploaded_file($_FILES['newmap_netxml']['tmp_name'], "./wardrivingmap/todo/" . $_FILES['newmap_netxml']['name']);
+		mail($wdm_mailto, "Neue NETXML von " . $wbbuserdata['username'] . " hochgeladen", "");
 		eval("\$successmessage .= \"" . $tpl->get("wardrivingmap_upload_success") . "\";");
 	}
 }

@@ -9,14 +9,15 @@ if (is_file($argv[1])) {
 	$month = substr($time, 4, 2);
 	$day = substr($time, 6, 2);
 	$date = $day . "." . $month . "." . $year;
-	echo $date;
+	if (is_dir("./kml/" . $date)) {
+		// Heute wurde schon geparst
+		unlink("./kml/" . $date . "/output.kml");
+	} else {
+		//erstes Parsen an dem Tag
+		mkdir("./kml/" . $date);
+		file_put_contents("./kml/" . $date . "/index.php", "");
+		file_put_contents("./kml/" . $date . "/info", "");
+	}
 }
 
-if (file_exists("./kml/" . $date)) {
-	// Heute wurde schon geparst
-	unlink("./kml/" . $date . "/output.kml");
-} else {
-	//erstes Parsen an dem Tag
-	file_put_contents("./kml/" . $date . "/index.php");
-	file_put_contents("./kml/" . $date . "info");
-}
+echo $date;
