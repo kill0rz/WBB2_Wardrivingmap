@@ -26,3 +26,7 @@
 + Shoutbox optional in Anleitung
 	+ Option für Optionales
 + wenn alles automatisiert ist, zeit loggen und dann zur nächsten verarbeitung +1min zuschlagen
+
++ Prüfung vor Upload per RegEx auf korrekten Dateinamen:
+	+ Kismet-20160728-12-52-11-1.netxml
+	+ Kismet-[0-9]{8}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{1}\.netxml
