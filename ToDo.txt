@@ -25,3 +25,4 @@
 
 + Shoutbox optional in Anleitung
 	+ Option für Optionales
++ wenn alles automatisiert ist, zeit loggen und dann zur nächsten verarbeitung +1min zuschlagen
