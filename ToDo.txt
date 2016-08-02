@@ -3,8 +3,11 @@
 + Beschreibung beim Upload mitgeben
 + Auto-Post bei Upload ins Forum?
 + pro Nutzer aufstellen
-+ Gruppenrecthe implementieren
++ Gruppenrechte implementieren
 + Ladebalken für Upload
++ Anleitung: JS include
+	<script src="./js/wardrivingmap.js" type="text/javascript"></script>
+	ganz am Ende
 + giskismet automatisieren
 	+ Parallelisierung des Prozesses
 + Daten alle in eine DB werfen
