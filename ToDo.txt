@@ -4,7 +4,6 @@
 + Auto-Post bei Upload ins Forum?
 + pro Nutzer aufstellen
 + Gruppenrechte implementieren
-+ Ladebalken für Upload
 + Anleitung: JS include
 	<script src="./js/wardrivingmap.js" type="text/javascript"></script>
 	ganz am Ende
